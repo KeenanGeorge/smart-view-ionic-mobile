@@ -110,6 +110,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-SmartView Team - [mmupfururirwa@smartviewtechnology.co.za](mailto:mmupfururirwa@smartviewtechnology.co.za)
+Smart-View Technology Team - [mmupfururirwa@smartviewtechnology.co.za](mailto:mmupfururirwa@smartviewtechnology.co.za)
 
 Project Link: [https://github.com/KeenanGeorge/smart-view-ionic-mobile](https://github.com/KeenanGeorge/smart-view-ionic-mobile)
