@@ -1,0 +1,7 @@
+{
+  "name": "smart-view-ionic-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
