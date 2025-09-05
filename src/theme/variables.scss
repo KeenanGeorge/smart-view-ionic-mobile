@@ -1,2 +1,38 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  /* Light theme overrides */
+  --ion-background-color: #f7f9fc;
+  --ion-text-color: #22223b;
+  --ion-color-primary: #4f8cff;
+  --ion-color-secondary: #ffb347;
+  --ion-color-tertiary: #6dd3b3;
+  --ion-color-success: #43e97b;
+  --ion-color-warning: #ffd166;
+  --ion-color-danger: #ff4f5a;
+  --ion-color-light: #e9ecef;
+  --ion-color-medium: #adb5bd;
+  --ion-color-dark: #22223b;
+}
+
+body.dark {
+  /* Dark theme */
+  --ion-background-color: #232946;
+  --ion-text-color: #eebbc3;
+  --ion-color-primary: #4f8cff;
+  --ion-color-secondary: #ffb347;
+  --ion-color-tertiary: #6dd3b3;
+  --ion-color-success: #43e97b;
+  --ion-color-warning: #ffd166;
+  --ion-color-danger: #ff4f5a;
+  --ion-color-light: #393e46;
+  --ion-color-medium: #6d6a75;
+  --ion-color-dark: #232946;
+  --ion-color-light-contrast: #eebbc3;
+}
+
+/* Optional component tweaks */
+body.dark .toolbar-search {
+  --background: #393e46;
+}

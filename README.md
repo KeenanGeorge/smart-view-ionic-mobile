@@ -111,3 +111,53 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📬 Contact
 
 Project Link: [https://github.com/KeenanGeorge/smart-view-ionic-mobile](https://github.com/KeenanGeorge/smart-view-ionic-mobile)
+
+---
+
+# High-Scale Meters Implementation
+
+![System Design Diagram](src\assets\flow.png)
+
+## Features implemented
+- Backend
+  - In-memory dataset of ~15k meters
+  - Endpoints:
+    - GET /meters?limit=&cursor=&q=&status=&type=
+    - GET /meters/changes?since=
+    - GET /mock/meters.json (full dataset, excluding deleted)
+    - GET /mock/changes.json?since=
+  - CORS enabled
+- Mobile app
+  - Cache-first loading using IndexedDB
+  - Debounced search (300ms) and combined filters
+  - Infinite scroll (page size ~1000)
+  - Pull-to-refresh applies /meters/changes
+  - Smooth scrolling with OnPush + trackBy
+
+## Run
+### Backend
+```
+node backend/server.js
+```
+
+### Frontend
+```
+npm start
+# or
+ionic serve
+```
+
+## Architecture
+- Data flow: API → MetersApiService → MetersStore (RxJS) → HomePage UI
+- Cursor-based pagination: opaque base64 cursor bound to filters via fingerprint
+- Offline: cache-first from IndexedDB + stale-while-revalidate and changes feed
+
+## Ethical AI usage
+This implementation was assisted by an AI coding assistant
+- Used AI for some boilerplate scaffolding (e.g., Angular service setup, RxJS patterns).
+- Referred to AI for syntax reminders and code structure guidance.
+- All AI-assisted snippets were reviewed, tested, and adapted to fit the project requirements.
+- Final architecture and business logic decisions were made independently.
+
+
+

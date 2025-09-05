@@ -1,20 +1,99 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Meters</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Meters</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ng-container *ngIf="vm$ | async as vm">
+    <ion-toolbar class="toolbar-search" color="light">
+      <ion-buttons slot="end">
+        <ion-button (click)="toggleTheme()">
+          <ion-icon slot="icon-only" name="moon-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-searchbar [value]="vm.query.q" placeholder="Search by name, ID or metering point" (ionInput)="onSearchChange($event)"></ion-searchbar>
+    </ion-toolbar>
+
+    <div class="segments">
+      <ion-segment [value]="vm.query.status" (ionChange)="onStatusChange($event)">
+        <ion-segment-button value=""><ion-label>All</ion-label></ion-segment-button>
+        <ion-segment-button value="online"><ion-label>Online</ion-label></ion-segment-button>
+        <ion-segment-button value="offline"><ion-label>Offline</ion-label></ion-segment-button>
+      </ion-segment>
+
+      <ion-segment [value]="vm.query.type" (ionChange)="onTypeChange($event)">
+        <ion-segment-button value=""><ion-label>All Types</ion-label></ion-segment-button>
+        <ion-segment-button value="water"><ion-label>Water</ion-label></ion-segment-button>
+        <ion-segment-button value="electricity"><ion-label>Electricity</ion-label></ion-segment-button>
+        <ion-segment-button value="gas"><ion-label>Gas</ion-label></ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <ion-item lines="none" class="count-row">
+      <ion-badge color="medium">{{ vm.items.length }} items</ion-badge>
+    </ion-item>
+
+    <ng-container *ngIf="vm.loading">
+      <ion-list>
+        <ion-item *ngFor="let s of [1,2,3,4,5,6,7,8,9,10]">
+          <ion-avatar slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-avatar>
+          <ion-label>
+            <h3><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></h3>
+            <p><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+            <p><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+
+    <div *ngIf="!vm.loading && vm.items.length > 0; else emptyState" class="list-container">
+      <cdk-virtual-scroll-viewport itemSize="76" class="viewport" (scrolledIndexChange)="onScrolledIndex($event, vm)">
+        <ion-list>
+          <ion-item *cdkVirtualFor="let m of vm.items; trackBy: trackById" detail="true">
+            <ion-icon slot="start" [name]="iconForType(m.type)" class="type-icon" [class.water]="m.type==='water'" [class.electricity]="m.type==='electricity'" [class.gas]="m.type==='gas'"></ion-icon>
+            <ion-label>
+              <h2>{{ m.name }} <span class="id">({{ m.id }})</span></h2>
+              <p>
+                <ion-icon name="pin-outline"></ion-icon>
+                {{ m.meteringPoint }}
+              </p>
+              <p>
+                <ion-icon name="speedometer-outline"></ion-icon>
+                Reading: {{ m.lastReading }}
+              </p>
+              <p class="updated">Updated: {{ m.updatedAt | date:'medium' }}</p>
+            </ion-label>
+            <ion-chip slot="end" [color]="m.status === 'online' ? 'success' : 'medium'" outline>
+              <ion-icon name="ellipse" [color]="m.status === 'online' ? 'success' : 'medium'"></ion-icon>
+              <ion-label class="capitalize">{{ m.status }}</ion-label>
+            </ion-chip>
+          </ion-item>
+        </ion-list>
+      </cdk-virtual-scroll-viewport>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="empty">
+        <ion-icon name="search-outline"></ion-icon>
+        <p>No items. Try adjusting filters or pulling to refresh.</p>
+      </div>
+    </ng-template>
+
+    <ion-infinite-scroll threshold="150px" (ionInfinite)="loadMore($event)" *ngIf="vm.nextCursor">
+      <ion-infinite-scroll-content loadingText="Loading more..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ng-container>
 </ion-content>

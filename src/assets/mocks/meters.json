@@ -1,0 +1,205 @@
+{
+  "total": 20,
+  "items": [
+    {
+      "id": "MTR-000001",
+      "accountId": 1001,
+      "name": "Meter 000001",
+      "meteringPointName": "MPN-000001",
+      "meterType": "water",
+      "status": "online",
+      "lastReading": 1543,
+      "updatedAt": "2024-08-05T10:15:00.000Z"
+    },
+    {
+      "id": "MTR-000002",
+      "accountId": 1002,
+      "name": "Meter 000002",
+      "meteringPointName": "MPN-000002",
+      "meterType": "electricity",
+      "status": "offline",
+      "lastReading": 22890,
+      "updatedAt": "2024-07-21T12:30:00.000Z"
+    },
+    {
+      "id": "MTR-000003",
+      "accountId": 1003,
+      "name": "Meter 000003",
+      "meteringPointName": "MPN-000003",
+      "meterType": "gas",
+      "status": "online",
+      "lastReading": 3401,
+      "updatedAt": "2024-07-28T08:00:00.000Z"
+    },
+    {
+      "id": "MTR-000004",
+      "accountId": 1004,
+      "name": "Meter 000004",
+      "meteringPointName": "MPN-000004",
+      "meterType": "water",
+      "status": "offline",
+      "lastReading": 812,
+      "updatedAt": "2024-06-11T09:45:00.000Z"
+    },
+    {
+      "id": "MTR-000005",
+      "accountId": 1005,
+      "name": "Meter 000005",
+      "meteringPointName": "MPN-000005",
+      "meterType": "electricity",
+      "status": "online",
+      "lastReading": 41234,
+      "updatedAt": "2024-08-01T14:10:00.000Z"
+    },
+    {
+      "id": "MTR-000006",
+      "accountId": 1001,
+      "name": "Meter 000006",
+      "meteringPointName": "MPN-000006",
+      "meterType": "gas",
+      "status": "online",
+      "lastReading": 9980,
+      "updatedAt": "2024-07-02T07:25:00.000Z"
+    },
+    {
+      "id": "MTR-000007",
+      "accountId": 1002,
+      "name": "Meter 000007",
+      "meteringPointName": "MPN-000007",
+      "meterType": "water",
+      "status": "online",
+      "lastReading": 1200,
+      "updatedAt": "2024-07-15T11:00:00.000Z"
+    },
+    {
+      "id": "MTR-000008",
+      "accountId": 1003,
+      "name": "Meter 000008",
+      "meteringPointName": "MPN-000008",
+      "meterType": "electricity",
+      "status": "offline",
+      "lastReading": 10234,
+      "updatedAt": "2024-06-25T16:30:00.000Z"
+    },
+    {
+      "id": "MTR-000009",
+      "accountId": 1004,
+      "name": "Meter 000009",
+      "meteringPointName": "MPN-000009",
+      "meterType": "gas",
+      "status": "online",
+      "lastReading": 7200,
+      "updatedAt": "2024-08-03T10:00:00.000Z"
+    },
+    {
+      "id": "MTR-000010",
+      "accountId": 1005,
+      "name": "Meter 000010",
+      "meteringPointName": "MPN-000010",
+      "meterType": "water",
+      "status": "online",
+      "lastReading": 1811,
+      "updatedAt": "2024-07-10T09:00:00.000Z"
+    },
+    {
+      "id": "MTR-000011",
+      "accountId": 1001,
+      "name": "Meter 000011",
+      "meteringPointName": "MPN-000011",
+      "meterType": "electricity",
+      "status": "online",
+      "lastReading": 45000,
+      "updatedAt": "2024-07-31T12:40:00.000Z"
+    },
+    {
+      "id": "MTR-000012",
+      "accountId": 1002,
+      "name": "Meter 000012",
+      "meteringPointName": "MPN-000012",
+      "meterType": "gas",
+      "status": "offline",
+      "lastReading": 4200,
+      "updatedAt": "2024-06-18T06:30:00.000Z"
+    },
+    {
+      "id": "MTR-000013",
+      "accountId": 1003,
+      "name": "Meter 000013",
+      "meteringPointName": "MPN-000013",
+      "meterType": "water",
+      "status": "online",
+      "lastReading": 2100,
+      "updatedAt": "2024-07-19T13:15:00.000Z"
+    },
+    {
+      "id": "MTR-000014",
+      "accountId": 1004,
+      "name": "Meter 000014",
+      "meteringPointName": "MPN-000014",
+      "meterType": "electricity",
+      "status": "online",
+      "lastReading": 18900,
+      "updatedAt": "2024-07-07T17:00:00.000Z"
+    },
+    {
+      "id": "MTR-000015",
+      "accountId": 1005,
+      "name": "Meter 000015",
+      "meteringPointName": "MPN-000015",
+      "meterType": "gas",
+      "status": "online",
+      "lastReading": 9055,
+      "updatedAt": "2024-08-02T08:20:00.000Z"
+    },
+    {
+      "id": "MTR-000016",
+      "accountId": 1001,
+      "name": "Meter 000016",
+      "meteringPointName": "MPN-000016",
+      "meterType": "water",
+      "status": "offline",
+      "lastReading": 1300,
+      "updatedAt": "2024-06-23T10:45:00.000Z"
+    },
+    {
+      "id": "MTR-000017",
+      "accountId": 1002,
+      "name": "Meter 000017",
+      "meteringPointName": "MPN-000017",
+      "meterType": "electricity",
+      "status": "online",
+      "lastReading": 33500,
+      "updatedAt": "2024-07-29T15:10:00.000Z"
+    },
+    {
+      "id": "MTR-000018",
+      "accountId": 1003,
+      "name": "Meter 000018",
+      "meteringPointName": "MPN-000018",
+      "meterType": "gas",
+      "status": "offline",
+      "lastReading": 6300,
+      "updatedAt": "2024-06-30T09:05:00.000Z"
+    },
+    {
+      "id": "MTR-000019",
+      "accountId": 1004,
+      "name": "Meter 000019",
+      "meteringPointName": "MPN-000019",
+      "meterType": "water",
+      "status": "online",
+      "lastReading": 1999,
+      "updatedAt": "2024-07-04T18:00:00.000Z"
+    },
+    {
+      "id": "MTR-000020",
+      "accountId": 1005,
+      "name": "Meter 000020",
+      "meteringPointName": "MPN-000020",
+      "meterType": "electricity",
+      "status": "online",
+      "lastReading": 27650,
+      "updatedAt": "2024-07-26T07:40:00.000Z"
+    }
+  ]
+}
